@@ -1,0 +1,38 @@
+[package]
+name = "reference-audio"
+version = "1.0.0"
+edition = "2024"
+publish = false
+readme = "README.md"
+license = "MIT"
+description = "Reference recording playback for MuseScore Studio, implemented in Rust"
+
+[lib]
+name = "reference_audio"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+vst3 = "=0.3.0"
+objc2 = "0.6"
+objc2-foundation = "0.3"
+libc = "0.2"
+dispatch2 = "0.3"
+objc2-app-kit = { version = "0.3", default-features = false, features = [
+  "std", "NSView", "NSResponder", "NSControl", "NSButton", "NSButtonCell",
+  "NSCell", "NSTextField", "NSText", "NSSlider", "NSStepper", "NSProgressIndicator",
+  "NSColor", "NSFont", "NSAppearance", "NSGraphics", "NSOpenPanel", "NSSavePanel",
+  "NSWindow", "NSPanel", "NSApplication", "NSDragging", "NSPasteboard", "NSAccessibility", "NSFontDescriptor",
+  "objc2-core-foundation",
+  "objc2-quartz-core", "objc2-uniform-type-identifiers"
+] }
+objc2-quartz-core = { version = "0.3", default-features = false, features = ["std", "CALayer"] }
+objc2-uniform-type-identifiers = { version = "0.3", features = ["UTType"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+# LLVM's debug stripping can produce misaligned Mach-O LINKEDIT data on current macOS.
+strip = false
+
+[lints.rust]
+unsafe_op_in_unsafe_fn = "warn"

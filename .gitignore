@@ -1,0 +1,18 @@
+# Cargo cache, packaged plug-ins and archived releases
+/target/
+
+# macOS metadata
+.DS_Store
+._*
+
+# Local editor settings and temporary files
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
+
+# Local environment files
+.env
+.env.*
+!.env.example

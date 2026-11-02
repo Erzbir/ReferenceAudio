@@ -1,0 +1,29 @@
+{
+  "Name": "ReferenceAudio",
+  "Factory Info": {
+    "Vendor": "Reference Audio",
+    "URL": "",
+    "E-Mail": "",
+    "Flags": {
+      "Unicode": true,
+      "Classes Discardable": false,
+      "Component Non Discardable": false
+    }
+  },
+  "Classes": [
+    {
+      "CID": "798BDE4342FC4E10A28099440FA782D1",
+      "Category": "Audio Module Class",
+      "Name": "Reference Audio",
+      "Vendor": "Reference Audio",
+      "SDKVersion": "VST 3 / vst3-rs 0.3.0",
+      "Sub Categories": [
+        "Instrument",
+        "Other"
+      ],
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": []
+    }
+  ]
+}
